@@ -1,4 +1,18 @@
 // Seleccionar todos los elementos con el atributo data-id
+const cinema = document.getElementById('cinema');
+const rows = 'ABCDEFGH';
+
+// Generar los asientos programáticamente
+for (let i = 0; i < rows.length; i++) {
+    for (let j = 1; j <= 8; j++) {
+        const seat = document.createElement('div');
+        seat.className = 'seat available';
+        seat.setAttribute('data-id', rows[i] + j);
+        seat.textContent = rows[i] + j;
+        cinema.appendChild(seat);
+    }
+}
+
 const seats = document.querySelectorAll("[data-id]");
 const purchaseButton = document.getElementById("purchase-button");
 
@@ -9,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     seats.forEach(seat => {
         const seatId = seat.getAttribute("data-id");
         if (savedSeats[seatId]) {
-            seat.className = savedSeats[seatId];
+            seat.className = 'seat ' + savedSeats[seatId];
         }
     });
 });
