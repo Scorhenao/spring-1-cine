@@ -4,7 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sala de Cine</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        .seat {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.available {
+    background-color: grey;
+}
+
+.selected {
+    background-color: yellow;
+}
+
+.sold {
+    background-color: red;
+}
+
+#cinema {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+}
+
+#purchase-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+    </style>
+
 </head>
 <body>
 
